@@ -190,7 +190,7 @@ a.rowlink:hover .row__name,a.rowlink:focus-visible .row__name{opacity:.6}
 .row__photo figcaption{margin-top:8px}
 .p-photos{
   margin-top:clamp(32px,4vw,56px);
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+  display:grid;grid-template-columns:repeat(4,1fr);
   gap:clamp(14px,1.8vw,28px);
 }
 .p-photos figure{margin:0}
@@ -219,6 +219,7 @@ a.rowlink:hover .row__name,a.rowlink:focus-visible .row__name{opacity:.6}
   .row__head .row__name{grid-column:1;grid-row:1}
   .row__head .row__arrow{grid-column:2;grid-row:1}
   .p-grid{grid-template-columns:1fr}
+  .p-photos{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 </head>
@@ -412,15 +413,18 @@ a.rowlink:hover .row__name,a.rowlink:focus-visible .row__name{opacity:.6}
           <figcaption class="mono">Ocean first</figcaption>
         </figure>
         <figure>
-          <img src="img-volcano.jpg" alt="Sofia standing at the edge of a volcano crater" loading="lazy">
-          <figcaption class="mono">Up a volcano</figcaption>
+          <img src="img-yoga.jpg" alt="Sofia in king pigeon pose in a sunlit studio" loading="lazy">
+          <figcaption class="mono">Daily discipline</figcaption>
         </figure>
         <figure>
           <img src="img-books.jpg" alt="A book exchange in a red telephone box" loading="lazy">
           <figcaption class="mono">Books, anywhere</figcaption>
         </figure>
-        <!-- Pending JPG re-export from HEIC:
-        <figure><img src="img-hiking.jpg" alt="Hiking" loading="lazy"><figcaption class="mono">Trails</figcaption></figure>
+        <figure>
+          <img src="img-hiking.jpg" alt="Sofia hiking with a full backpack, looking over a mountain valley" loading="lazy">
+          <figcaption class="mono">Trails</figcaption>
+        </figure>
+        <!-- Pending JPG re-export from HEIC (IMG_6439):
         <figure><img src="img-turkey.jpg" alt="Working outdoors in Turkey" loading="lazy"><figcaption class="mono">Remote office, Turkey</figcaption></figure>
         -->
       </div>
