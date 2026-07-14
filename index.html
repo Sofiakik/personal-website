@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sofia Ingman — Tax Lawyer → Operator → Founder</title>
+<meta name="description" content="London-based operator-founder. Cross-border tax lawyer turned company builder — fintech, crypto, compliance, payments, treasury.">
+<meta property="og:title" content="Sofia Ingman — Tax Lawyer → Operator → Founder">
+<meta property="og:description" content="London-based operator-founder. Ran Notcoin day-to-day as it went ~$100k → $40M in six months and reached 35M players. Building my own company.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sofia Ingman — Tax Lawyer → Operator → Founder">
+<meta name="twitter:description" content="London-based operator-founder. Deep in fintech, crypto, compliance and payments. Building my own company.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23121212'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial,sans-serif' font-size='28' fill='%23d8d8d8' text-anchor='middle'%3ESI%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#121212;
+  --mut:#565656;
+  --green:#008f28;
+  --line:rgba(18,18,18,.18);
+  --gap:clamp(56px,7vw,104px);
+  --pad:clamp(20px,4vw,64px);
+  --display:"Instrument Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--display);
+  font-weight:400;
+  color:var(--ink);
+  background:#d8d8d8;
+  -webkit-font-smoothing:antialiased;
+}
+.wash{position:fixed;inset:0;z-index:-2;background:#d8d8d8}
+a{color:inherit;text-decoration:none}
+a:hover,a:focus-visible{opacity:.6}
+.mono{
+  font-family:var(--mono);
+  font-size:clamp(12px,1vw,16px);
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:var(--mut);
+}
+
+/* reveal on scroll — only when JS is running (html.js), so no-JS still shows content */
+.js [data-reveal]{opacity:0;transform:translateY(20px);filter:blur(8px);transition:opacity .6s ease,transform .6s ease,filter .6s ease;transition-delay:calc(var(--i,0)*.05s)}
+.js [data-reveal].is-in{opacity:1;transform:none;filter:none}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){
+  [data-reveal]{opacity:1;transform:none;filter:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* header / footer */
+header,footer{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:clamp(20px,2vw,40px) var(--pad);
+  gap:16px;flex-wrap:wrap;
+}
+footer{padding-top:clamp(40px,6vw,120px)}
+footer .right,header .right{display:flex;gap:clamp(16px,3vw,48px);flex-wrap:wrap}
+
+/* hero */
+.hero{
+  padding:clamp(48px,8vw,140px) var(--pad) clamp(64px,10vw,180px);
+  display:flex;flex-direction:column;align-items:flex-start;
+}
+.portrait{
+  width:clamp(120px,15vw,260px);
+  aspect-ratio:1/1;border-radius:50%;
+  margin-bottom:clamp(24px,3vw,52px);
+  object-fit:cover;
+  /* PHOTO: replace the div below with
+     <img class="portrait" src="sofia.jpg" alt="Sofia Ingman"> */
+  background:#b6b6b6;
+  display:flex;align-items:center;justify-content:center;
+  font-size:clamp(32px,4vw,64px);color:#f0f0f0;letter-spacing:-.02em;
+}
+h1{
+  font-size:clamp(34px,5.6vw,104px);
+  line-height:.98;letter-spacing:-.03em;font-weight:400;
+}
+.tagline{
+  margin-top:clamp(16px,2vw,32px);
+  font-size:clamp(20px,2.6vw,46px);
+  letter-spacing:-.02em;line-height:1.1;
+}
+.tagline .arrow{color:var(--mut);padding:0 .15em}
+.tagline .founder{position:relative;white-space:nowrap}
+.tagline .founder::after{
+  content:"";position:absolute;left:0;right:0;bottom:-.08em;height:.06em;
+  background:var(--green);transform:scaleX(0);transform-origin:left;
+  animation:draw .6s ease .9s forwards;
+}
+@keyframes draw{to{transform:scaleX(1)}}
+.hero .intro{
+  margin-top:clamp(28px,3.5vw,56px);
+  max-width:56ch;
+  font-size:clamp(16px,1.4vw,22px);
+  line-height:1.5;color:var(--ink);
+}
+.hero .intro a{border-bottom:1px solid var(--line)}
+
+/* flow: sticky word left, content right */
+.flow{
+  display:grid;grid-template-columns:.92fr 1.08fr;
+  column-gap:var(--gap);
+  padding:0 var(--pad);
+  align-items:start;
+}
+.flow__sticky{
+  position:sticky;top:0;height:100vh;height:100dvh;
+  display:grid;align-content:center;
+}
+.flow__word{
+  grid-area:1/1;
+  font-size:clamp(40px,7.4vw,138px);
+  line-height:.92;letter-spacing:-.03em;
+  opacity:0;filter:blur(10px);
+  transition:opacity .55s ease,filter .55s ease;
+}
+.flow__word.is-active{opacity:1;filter:none}
+.flow__word{align-self:center}
+.block{padding:clamp(64px,12vh,160px) 0;min-height:60vh;display:flex;flex-direction:column;justify-content:center}
+.block:first-child{padding-top:clamp(48px,10vh,120px)}
+
+/* rows */
+.row{
+  border-bottom:1px solid var(--line);
+  padding:clamp(20px,2.4vw,40px) 0;
+}
+.row:first-of-type{border-top:1px solid var(--line)}
+.row__head{
+  display:grid;grid-template-columns:1fr max-content 1.1em;
+  align-items:baseline;column-gap:16px;
+}
+.row__name{
+  font-size:clamp(24px,3.1vw,56px);
+  letter-spacing:-.02em;line-height:1.05;
+  font-weight:400;
+}
+.row__arrow{
+  font-family:var(--mono);color:var(--mut);
+  transition:transform .3s ease,color .3s ease;
+  justify-self:end;grid-column:3;grid-row:1;
+}
+a.rowlink:hover,a.rowlink:focus-visible{opacity:1}
+a.rowlink:hover .row__arrow,a.rowlink:focus-visible .row__arrow{transform:translate(.18em,-.18em);color:var(--ink)}
+a.rowlink:hover .row__name,a.rowlink:focus-visible .row__name{opacity:.6}
+.row__desc{
+  margin-top:clamp(10px,1.2vw,18px);
+  max-width:62ch;
+  font-size:clamp(15px,1.3vw,20px);
+  line-height:1.5;
+}
+.row__links{margin-top:clamp(8px,1vw,14px);display:flex;gap:clamp(14px,2vw,28px);flex-wrap:wrap}
+.row__links a{border-bottom:1px solid var(--line)}
+.num{color:var(--ink)}
+
+/* now / edge / personal prose */
+.prose{
+  font-size:clamp(18px,1.8vw,30px);
+  line-height:1.4;letter-spacing:-.01em;
+  max-width:44ch;
+}
+.prose + .prose{margin-top:clamp(16px,2vw,28px)}
+.prose a{border-bottom:1px solid var(--line)}
+.edge-list{margin-top:clamp(24px,3vw,44px)}
+.edge-list .mono{display:block;margin-bottom:10px}
+.edge-item{
+  border-bottom:1px solid var(--line);
+  padding:clamp(12px,1.4vw,20px) 0;
+  font-size:clamp(18px,2vw,34px);letter-spacing:-.02em;
+}
+.edge-item:first-of-type{border-top:1px solid var(--line)}
+
+/* personal placeholder cards */
+.p-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,32px)}
+.p-cell{border-top:1px solid var(--line);padding-top:clamp(12px,1.4vw,20px)}
+.p-cell h3{font-weight:400;font-size:clamp(18px,1.8vw,30px);letter-spacing:-.02em;margin-bottom:8px}
+.p-cell p{font-size:clamp(14px,1.2vw,18px);line-height:1.5;color:var(--mut)}
+
+.block__label{display:none}
+@media (max-width:760px){
+  .flow{grid-template-columns:1fr}
+  .flow__sticky{display:none}
+  .block__label{
+    display:block;
+    font-size:clamp(46px,16vw,110px);
+    line-height:.92;letter-spacing:-.03em;
+    margin-bottom:clamp(24px,6vw,40px);
+  }
+  .block{min-height:auto;padding:clamp(48px,10vh,96px) 0;justify-content:flex-start}
+  .row__head{grid-template-columns:1fr 1.1em}
+  .row__head .mono{grid-column:1;grid-row:2;margin-top:6px}
+  .row__head .row__name{grid-column:1;grid-row:1}
+  .row__head .row__arrow{grid-column:2;grid-row:1}
+  .p-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<div class="wash" id="wash"></div>
+
+<header>
+  <a class="mono" href="https://www.linkedin.com/in/ingmansofia/" target="_blank" rel="noopener">LinkedIn ↗</a>
+  <div class="right">
+    <!-- TODO: replace with Sofia's personal email -->
+    <a class="mono" href="mailto:ingmansophie22@gmail.com">ingmansophie22@gmail.com</a>
+    <span class="mono">©2026</span>
+  </div>
+</header>
+
+<section class="hero">
+  <!-- Portrait: place sofia.jpg (square crop, head & shoulders) next to index.html.
+       If the file is missing, the "SI" circle below shows instead. -->
+  <img class="portrait" src="sofia.jpg" alt="Sofia Ingman" data-reveal style="--i:0"
+       onerror="this.style.display='none';document.getElementById('portrait-fallback').style.display='flex'">
+  <div class="portrait" id="portrait-fallback" data-reveal style="--i:0;display:none">SI</div>
+  <h1 data-reveal style="--i:1">Sofia Ingman</h1>
+  <p class="tagline" data-reveal style="--i:2">Tax Lawyer<span class="arrow">→</span>Operator<span class="arrow">→</span><span class="founder">Founder</span></p>
+  <p class="intro" data-reveal style="--i:3">
+    I build the whole company around the product. Cross-border tax lawyer turned
+    operator — most recently I ran Notcoin day-to-day as it went ~$100k → $40M
+    in six months and reached 35M players. Deep in fintech, crypto, compliance
+    and payments. London-based, building my own company — with a technical cofounder.
+    <a href="#work">See the work ↓</a>
+  </p>
+</section>
+
+<main class="flow" id="work">
+  <div class="flow__sticky" aria-hidden="true">
+    <span class="flow__word" data-word="now">Now</span>
+    <span class="flow__word" data-word="ventures">Work</span>
+    <span class="flow__word" data-word="before">Before</span>
+    <span class="flow__word" data-word="personal">Personal</span>
+  </div>
+
+  <div class="flow__scroll">
+
+    <div class="block" data-section="now">
+      <h2 class="visually-hidden">Now</h2>
+      <div class="block__label" aria-hidden="true">Now</div>
+      <p class="prose" data-reveal>
+        Building my own company: financial &amp; compliance infrastructure
+        for the crypto-native, global economy — AI-native financial
+        operations, stablecoin payment rails.
+      </p>
+      <p class="prose" data-reveal>
+        Looking for a technical cofounder.
+        <a href="mailto:ingmansophie22@gmail.com">Talk to me</a>.
+      </p>
+      <div class="edge-list" data-reveal>
+        <span class="mono">Edge</span>
+        <div class="edge-item">Cross-border tax &amp; regulatory</div>
+        <div class="edge-item">Crypto + fiat payment rails</div>
+        <div class="edge-item">Treasury</div>
+        <div class="edge-item">Multi-entity operations</div>
+      </div>
+    </div>
+
+    <div class="block" data-section="ventures">
+      <h2 class="visually-hidden">Work</h2>
+      <div class="block__label" aria-hidden="true">Work</div>
+      <div class="row" data-reveal>
+        <a class="rowlink" href="https://notcoin.org/" target="_blank" rel="noopener">
+          <div class="row__head">
+            <h3 class="row__name">Notcoin / Open Builders</h3>
+            <span class="mono">2024 — now</span>
+            <span class="row__arrow">↗</span>
+          </div>
+        </a>
+        <p class="row__desc">
+          Ran the company day-to-day — joined as the first operations hire and
+          built the whole operating engine as revenue went
+          <span class="num">~$100k → $40M in six months</span> and the game reached
+          <span class="num">35M players</span> (70M+ ecosystem):
+          <span class="num">$20M treasury</span>, fiat + crypto payment rails,
+          legal &amp; finance across <span class="num">7 entities</span>, a team
+          grown to 35 — while the founder stepped back to a near-silent shareholder.
+        </p>
+        <div class="row__links">
+          <a class="mono" href="https://decrypt.co/videos/interviews/nEJVx7Nn/what-is-notcoin-co-creator-sasha-plotvinov-explains-the-viral-telegram-game-and-token" target="_blank" rel="noopener">Decrypt ↗</a>
+          <a class="mono" href="https://www.binance.com/en/square/post/23720296410393" target="_blank" rel="noopener">Binance ↗</a>
+          <a class="mono" href="https://openbuilders.xyz/" target="_blank" rel="noopener">Open Builders ↗</a>
+        </div>
+      </div>
+
+      <div class="row" data-reveal>
+        <div class="row__head">
+          <h3 class="row__name">Telegram media network</h3>
+          <span class="mono">2024 — now</span>
+          <span class="row__arrow"></span>
+        </div>
+        <p class="row__desc">
+          Co-built a network of author-run channels monetised through ads —
+          <span class="num">~200 applicants screened to 30 authors</span>, all
+          operations, pricing and client management designed from scratch.
+          Now runs without me; <span class="num">~$300k earned to date</span>.
+        </p>
+      </div>
+
+      <div class="row" data-reveal>
+        <a class="rowlink" href="https://www.instagram.com/stezhok.books/" target="_blank" rel="noopener">
+          <div class="row__head">
+            <h3 class="row__name">Stezhok Books</h3>
+            <span class="mono">2023 — 2024</span>
+            <span class="row__arrow">↗</span>
+          </div>
+        </a>
+        <p class="row__desc">
+          My first company — an online bookshop selling curated bundles of
+          Russian books to readers abroad. Owned every layer: sourcing, site,
+          brand, community, delivery. When the unit economics wouldn't work,
+          closed it <span class="num">net-positive</span> by selling stock to a larger competitor.
+        </p>
+      </div>
+    </div>
+
+    <div class="block" data-section="before">
+      <h2 class="visually-hidden">Before</h2>
+      <div class="block__label" aria-hidden="true">Before</div>
+      <div class="row" data-reveal>
+        <div class="row__head">
+          <h3 class="row__name">EY — cross-border tax</h3>
+          <span class="mono">2018 — 2024</span>
+          <span class="row__arrow"></span>
+        </div>
+        <p class="row__desc">
+          Built a first-of-its-kind tax-audit diagnostic tool: researched
+          <span class="num">300+ cases</span>, convinced a Partner to back me —
+          an unproven junior — then pitched <span class="num">~100 clients</span>
+          myself and shipped it to <span class="num">30</span>.
+        </p>
+      </div>
+      <div class="row" data-reveal>
+        <div class="row__head">
+          <h3 class="row__name">Lund University — LLM</h3>
+          <span class="mono">2018</span>
+          <span class="row__arrow"></span>
+        </div>
+        <p class="row__desc">International &amp; European Tax Law.</p>
+      </div>
+    </div>
+
+    <div class="block" data-section="personal">
+      <h2 class="visually-hidden">Personal</h2>
+      <div class="block__label" aria-hidden="true">Personal</div>
+      <!-- PLACEHOLDER SECTION — Sofia to provide real content -->
+      <div class="p-grid" data-reveal>
+        <div class="p-cell">
+          <h3>Path</h3>
+          <p>[Placeholder — the story of how a Russian tax lawyer ended up building crypto companies in London.]</p>
+        </div>
+        <div class="p-cell">
+          <h3>Hobbies</h3>
+          <p>[Placeholder — what Sofia does outside of work.]</p>
+        </div>
+        <div class="p-cell">
+          <h3>What matters</h3>
+          <p>[Placeholder — principles and things Sofia finds important.]</p>
+        </div>
+        <div class="p-cell">
+          <h3>Books</h3>
+          <p>[Placeholder — favourite books, possibly with a line on why each one.]</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <a class="mono" href="https://www.linkedin.com/in/ingmansofia/" target="_blank" rel="noopener">LinkedIn ↗</a>
+  <div class="right">
+    <a class="mono" href="mailto:ingmansophie22@gmail.com">ingmansophie22@gmail.com</a>
+    <span class="mono">©2026 Sofia Ingman</span>
+  </div>
+</footer>
+
+<script>
+// scroll-tinted background
+(function(){
+  const stops=[[216,216,216],[240,240,240],[206,206,206],[196,196,196]];
+  const wash=document.getElementById('wash');
+  function lerp(a,b,t){return a+(b-a)*t}
+  function onScroll(){
+    const max=document.documentElement.scrollHeight-innerHeight;
+    const p=max>0?Math.min(1,Math.max(0,scrollY/max)):0;
+    const seg=p*(stops.length-1), i=Math.min(stops.length-2,Math.floor(seg)), t=seg-i;
+    const c=stops[i].map((v,k)=>Math.round(lerp(v,stops[i+1][k],t)));
+    wash.style.background=`rgb(${c[0]},${c[1]},${c[2]})`;
+  }
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+
+// sticky word crossfade
+(function(){
+  const words={};
+  document.querySelectorAll('.flow__word').forEach(w=>words[w.dataset.word]=w);
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        Object.values(words).forEach(w=>w.classList.remove('is-active'));
+        const w=words[e.target.dataset.section];
+        if(w)w.classList.add('is-active');
+      }
+    });
+  },{rootMargin:'-45% 0px -45% 0px'});
+  document.querySelectorAll('.block[data-section]').forEach(b=>obs.observe(b));
+})();
+
+// reveal on scroll
+(function(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-in');obs.unobserve(e.target)}});
+  },{threshold:.15});
+  document.querySelectorAll('[data-reveal]').forEach(el=>obs.observe(el));
+})();
+</script>
+</body>
+</html>
