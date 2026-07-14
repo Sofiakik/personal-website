@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sofia Ingman — Tax Lawyer → Operator → Founder</title>
+<title>Sofia Ingman — Tax Lawyer → Builder → Founder</title>
 <meta name="description" content="London-based operator-founder. Cross-border tax lawyer turned company builder — fintech, crypto, compliance, payments, treasury.">
-<meta property="og:title" content="Sofia Ingman — Tax Lawyer → Operator → Founder">
+<meta property="og:title" content="Sofia Ingman — Tax Lawyer → Builder → Founder">
 <meta property="og:description" content="London-based operator-founder. Ran Notcoin day-to-day as it went ~$100k → $40M in six months and reached 35M players. Building my own company.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sofia Ingman — Tax Lawyer → Operator → Founder">
+<meta name="twitter:title" content="Sofia Ingman — Tax Lawyer → Builder → Founder">
 <meta name="twitter:description" content="London-based operator-founder. Deep in fintech, crypto, compliance and payments. Building my own company.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23121212'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial,sans-serif' font-size='28' fill='%23d8d8d8' text-anchor='middle'%3ESI%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,21 +64,25 @@ header,footer{
 footer{padding-top:clamp(40px,6vw,120px)}
 footer .right,header .right{display:flex;gap:clamp(16px,3vw,48px);flex-wrap:wrap}
 
-/* hero */
+/* hero — text left, large portrait right */
 .hero{
-  padding:clamp(48px,8vw,140px) var(--pad) clamp(64px,10vw,180px);
-  display:flex;flex-direction:column;align-items:flex-start;
+  padding:clamp(48px,7vw,120px) var(--pad) clamp(64px,10vw,180px);
+  display:grid;grid-template-columns:1.15fr .85fr;
+  column-gap:var(--gap);align-items:center;
 }
+.hero__media{justify-self:end;align-self:center}
 .portrait{
-  width:clamp(120px,15vw,260px);
+  width:clamp(200px,28vw,460px);
   aspect-ratio:1/1;border-radius:50%;
-  margin-bottom:clamp(24px,3vw,52px);
   object-fit:cover;
-  /* PHOTO: replace the div below with
-     <img class="portrait" src="sofia.jpg" alt="Sofia Ingman"> */
   background:#b6b6b6;
   display:flex;align-items:center;justify-content:center;
-  font-size:clamp(32px,4vw,64px);color:#f0f0f0;letter-spacing:-.02em;
+  font-size:clamp(48px,6vw,96px);color:#f0f0f0;letter-spacing:-.02em;
+}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;row-gap:clamp(28px,6vw,44px)}
+  .hero__media{justify-self:start;order:-1}
+  .portrait{width:clamp(140px,40vw,220px)}
 }
 h1{
   font-size:clamp(34px,5.6vw,104px);
@@ -183,6 +187,8 @@ a.rowlink:hover .row__name,a.rowlink:focus-visible .row__name{opacity:.6}
   font-size:clamp(18px,2vw,34px);letter-spacing:-.02em;
 }
 .edge-item:first-of-type{border-top:1px solid var(--line)}
+.edge-note{color:var(--mut);font-size:.62em}
+.edge-sum{color:var(--mut);font-style:italic}
 
 /* photos — the only colour on the page */
 .row__photo{margin-top:clamp(16px,2vw,28px);max-width:min(440px,100%)}
@@ -237,20 +243,22 @@ a.rowlink:hover .row__name,a.rowlink:focus-visible .row__name{opacity:.6}
 </header>
 
 <section class="hero">
-  <!-- Portrait: place sofia.jpg (square crop, head & shoulders) next to index.html.
-       If the file is missing, the "SI" circle below shows instead. -->
-  <img class="portrait" src="sofia.jpg" alt="Sofia Ingman" data-reveal style="--i:0"
-       onerror="this.style.display='none';document.getElementById('portrait-fallback').style.display='flex'">
-  <div class="portrait" id="portrait-fallback" data-reveal style="--i:0;display:none">SI</div>
-  <h1 data-reveal style="--i:1">Sofia Ingman</h1>
-  <p class="tagline" data-reveal style="--i:2">Tax Lawyer<span class="arrow">→</span>Operator<span class="arrow">→</span><span class="founder">Founder</span></p>
-  <p class="intro" data-reveal style="--i:3">
-    I build the whole company around the product. Cross-border tax lawyer turned
-    operator — most recently I ran Notcoin day-to-day as it went ~$100k → $40M
-    in six months and reached 35M players. Deep in fintech, crypto, compliance
-    and payments. London-based, building my own company — with a technical cofounder.
-    <a href="#work">See the work ↓</a>
-  </p>
+  <div class="hero__text">
+    <h1 data-reveal style="--i:1">Sofia Ingman</h1>
+    <p class="tagline" data-reveal style="--i:2">Tax Lawyer<span class="arrow">→</span>Builder<span class="arrow">→</span><span class="founder">Founder</span></p>
+    <p class="intro" data-reveal style="--i:3">
+      A former cross-border tax lawyer who became Notcoin's first ops hire —
+      I built the operating engine behind its growth from ~$100k to $40M in
+      six months (35M players), and ended up running it fully. Now I'm building
+      my own — something global, from zero — and looking for a technical
+      cofounder. <a href="#work">See the work ↓</a>
+    </p>
+  </div>
+  <div class="hero__media" data-reveal style="--i:0">
+    <img class="portrait" src="sofia.jpg" alt="Sofia Ingman"
+         onerror="this.style.display='none';document.getElementById('portrait-fallback').style.display='flex'">
+    <div class="portrait" id="portrait-fallback" style="display:none">SI</div>
+  </div>
 </section>
 
 <main class="flow" id="work">
@@ -258,6 +266,7 @@ a.rowlink:hover .row__name,a.rowlink:focus-visible .row__name{opacity:.6}
     <span class="flow__word" data-word="now">Now</span>
     <span class="flow__word" data-word="ventures">Work</span>
     <span class="flow__word" data-word="before">Before</span>
+    <span class="flow__word" data-word="education">Education</span>
     <span class="flow__word" data-word="personal">Personal</span>
   </div>
 
@@ -281,8 +290,8 @@ a.rowlink:hover .row__name,a.rowlink:focus-visible .row__name{opacity:.6}
         <span class="mono">Edge</span>
         <div class="edge-item">Cross-border tax &amp; regulatory</div>
         <div class="edge-item">Crypto + fiat payment rails</div>
-        <div class="edge-item">Treasury</div>
-        <div class="edge-item">Multi-entity operations</div>
+        <div class="edge-item">Multi-entity operations <span class="edge-note">(business, team, finance)</span></div>
+        <div class="edge-item edge-sum">i.e. chaos into order, at scale</div>
       </div>
     </div>
 
@@ -308,7 +317,7 @@ a.rowlink:hover .row__name,a.rowlink:focus-visible .row__name{opacity:.6}
           <li>Stood up a <span class="num">$20M</span> treasury &amp; trading operation from zero — fiat + crypto rails</li>
           <li>Audited group reporting and legal structure across <span class="num">7 entities</span>, built from scratch</li>
           <li>Turned one revenue bottleneck into an <span class="num">80-client</span> business-development operation</li>
-          <li>Grew and ran a team of <span class="num">35</span> across 7 companies</li>
+          <li>Set up processes and organised a suddenly-expanded team of <span class="num">35</span> across 7 companies</li>
         </ul>
         <div class="row__links">
           <a class="mono" href="https://notcoin.org/" target="_blank" rel="noopener">Notcoin ↗</a>
@@ -363,19 +372,49 @@ a.rowlink:hover .row__name,a.rowlink:focus-visible .row__name{opacity:.6}
           <span class="row__arrow"></span>
         </div>
         <p class="row__desc">
-          Built a first-of-its-kind tax-audit diagnostic tool: researched
+          Grew from junior tax consultant to tax manager running a team
+          of <span class="num">5</span>.
+        </p>
+        <ul class="row__points">
+          <li>Built a first-of-its-kind tax-audit diagnostic tool: researched
           <span class="num">300+ cases</span>, convinced a Partner to back me —
           an unproven junior — then pitched <span class="num">~100 clients</span>
-          myself and shipped it to <span class="num">30</span>.
+          myself and shipped it to <span class="num">30</span></li>
+          <li>Led a PMO tax team in the business restructuring of a major pharma
+          company affecting <span class="num">50+ countries</span> (1+ year,
+          total team budget <span class="num">&gt;£2M</span>)</li>
+          <li>Advised <span class="num">25+ foreign SaaS companies</span> on a new
+          cross-border digital-services tax regime — ~80% of the foreign IT
+          players in the market</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block" data-section="education">
+      <h2 class="visually-hidden">Education</h2>
+      <div class="block__label" aria-hidden="true">Education</div>
+      <div class="row" data-reveal>
+        <div class="row__head">
+          <h3 class="row__name">Lund University — LLM</h3>
+          <span class="mono">2017 — 2018</span>
+          <span class="row__arrow"></span>
+        </div>
+        <p class="row__desc">
+          Master's in European &amp; International Tax Law, School of Economics
+          and Management. Thesis on whether personal data can be treated as
+          consideration for VAT on "free" online platforms — grade A.
         </p>
       </div>
       <div class="row" data-reveal>
         <div class="row__head">
-          <h3 class="row__name">Lund University — LLM</h3>
-          <span class="mono">2018</span>
+          <h3 class="row__name">MGIMO — BA in Law</h3>
+          <span class="mono">2013 — 2017</span>
           <span class="row__arrow"></span>
         </div>
-        <p class="row__desc">International &amp; European Tax Law.</p>
+        <p class="row__desc">
+          International Business, Trade &amp; Tax Law, Moscow State Institute of
+          International Relations. Diploma with honours — GPA 91/100.
+        </p>
       </div>
     </div>
 
@@ -385,26 +424,27 @@ a.rowlink:hover .row__name,a.rowlink:focus-visible .row__name{opacity:.6}
       <div class="p-grid" data-reveal>
         <div class="p-cell">
           <h3>Path</h3>
-          <p>I've moved countries more than once — for study, for work, for a
-          bet on an industry most people I knew dismissed. I don't sit still:
-          when the interesting thing is somewhere else, I go.</p>
+          <p>I've moved countries more than once — Russia, Sweden, the UK —
+          for study, for work, for opportunity. I don't sit still: "follow
+          the energy and the opportunity" has always been my motto.</p>
         </div>
         <div class="p-cell">
           <h3>Hobbies</h3>
-          <p>Ocean first: I surf whenever I can. Yoga is a daily discipline;
-          tennis, hiking and movement in general are non-negotiable. Next on
-          the list: kitesurfing, shooting, riding a motorbike. Off the water —
-          travelling, good food, good books.</p>
+          <p>Ocean first: I surf whenever I can. Yoga is my daily discipline.
+          I play tennis and hike — movement in general is non-negotiable.
+          Next on my list: kitesurfing, shooting, riding a motorbike. Off the
+          water — travelling, good food, good books.</p>
         </div>
         <div class="p-cell">
           <h3>What matters</h3>
-          <p>Integrity. Loyalty and long-term relationships. Discipline. A
-          challenge worth the effort — and zero patience for the status quo.</p>
+          <p>Integrity and loyalty. Long-term relationships. Curiosity and
+          drive. A challenge worth the effort — and zero patience for the
+          status quo.</p>
         </div>
         <div class="p-cell">
           <h3>Books</h3>
           <p>Lately addicted to Irvin Yalom — fiction that doubles as a
-          psychology course. And rereading Anna Karenina.</p>
+          psychology course. And rereading Tolstoy's Anna Karenina.</p>
         </div>
       </div>
       <div class="p-photos" data-reveal>
