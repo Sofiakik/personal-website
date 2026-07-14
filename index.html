@@ -157,7 +157,13 @@ a.rowlink:hover .row__name,a.rowlink:focus-visible .row__name{opacity:.6}
   font-size:clamp(15px,1.3vw,20px);
   line-height:1.5;
 }
-.row__links{margin-top:clamp(8px,1vw,14px);display:flex;gap:clamp(14px,2vw,28px);flex-wrap:wrap}
+.row__points{
+  margin-top:clamp(10px,1.2vw,18px);max-width:62ch;list-style:none;
+  font-size:clamp(14px,1.2vw,18px);line-height:1.5;color:var(--mut);
+}
+.row__points li{padding:5px 0 5px 1.4em;position:relative}
+.row__points li::before{content:"—";position:absolute;left:0;color:var(--mut)}
+.row__links{margin-top:clamp(12px,1.4vw,20px);display:flex;gap:clamp(14px,2vw,28px);flex-wrap:wrap}
 .row__links a{border-bottom:1px solid var(--line)}
 .num{color:var(--ink)}
 
@@ -178,11 +184,24 @@ a.rowlink:hover .row__name,a.rowlink:focus-visible .row__name{opacity:.6}
 }
 .edge-item:first-of-type{border-top:1px solid var(--line)}
 
+/* photos — the only colour on the page */
+.row__photo{margin-top:clamp(16px,2vw,28px);max-width:min(440px,100%)}
+.row__photo img{width:100%;display:block;border-radius:2px}
+.row__photo figcaption{margin-top:8px}
+.p-photos{
+  margin-top:clamp(32px,4vw,56px);
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+  gap:clamp(14px,1.8vw,28px);
+}
+.p-photos figure{margin:0}
+.p-photos img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:2px}
+.p-photos figcaption{margin-top:8px}
+
 /* personal placeholder cards */
 .p-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,32px)}
 .p-cell{border-top:1px solid var(--line);padding-top:clamp(12px,1.4vw,20px)}
 .p-cell h3{font-weight:400;font-size:clamp(18px,1.8vw,30px);letter-spacing:-.02em;margin-bottom:8px}
-.p-cell p{font-size:clamp(14px,1.2vw,18px);line-height:1.5;color:var(--mut)}
+.p-cell p{font-size:clamp(14px,1.2vw,18px);line-height:1.55;color:var(--ink)}
 
 .block__label{display:none}
 @media (max-width:760px){
@@ -247,13 +266,15 @@ a.rowlink:hover .row__name,a.rowlink:focus-visible .row__name{opacity:.6}
       <h2 class="visually-hidden">Now</h2>
       <div class="block__label" aria-hidden="true">Now</div>
       <p class="prose" data-reveal>
-        Building my own company: financial &amp; compliance infrastructure
-        for the crypto-native, global economy — AI-native financial
-        operations, stablecoin payment rails.
+        Running <a href="https://notcoin.org/" target="_blank" rel="noopener">Notcoin</a>
+        &amp; <a href="https://openbuilders.xyz/" target="_blank" rel="noopener">Open Builders</a>
+        day-to-day — and building towards my own company: financial &amp;
+        compliance infrastructure for the crypto-native, global economy —
+        AI-native financial operations, stablecoin payment rails.
       </p>
       <p class="prose" data-reveal>
-        Looking for a technical cofounder.
-        <a href="mailto:ingmansophie22@gmail.com">Talk to me</a>.
+        The next company I build will be mine. Looking for a technical
+        cofounder — <a href="mailto:ingmansophie22@gmail.com">talk to me</a>.
       </p>
       <div class="edge-list" data-reveal>
         <span class="mono">Edge</span>
@@ -276,19 +297,28 @@ a.rowlink:hover .row__name,a.rowlink:focus-visible .row__name{opacity:.6}
           </div>
         </a>
         <p class="row__desc">
-          Ran the company day-to-day — joined as the first operations hire and
-          built the whole operating engine as revenue went
-          <span class="num">~$100k → $40M in six months</span> and the game reached
-          <span class="num">35M players</span> (70M+ ecosystem):
-          <span class="num">$20M treasury</span>, fiat + crypto payment rails,
-          legal &amp; finance across <span class="num">7 entities</span>, a team
-          grown to 35 — while the founder stepped back to a near-silent shareholder.
+          Joined as the first operations hire when almost nothing was in place —
+          today I run the company day-to-day, the founder stepped back to a
+          near-silent shareholder. Built the whole operating engine as revenue
+          went <span class="num">~$100k → $40M in six months</span> and the game
+          reached <span class="num">35M players</span> (70M+ ecosystem).
         </p>
+        <ul class="row__points">
+          <li>Stood up a <span class="num">$20M</span> treasury &amp; trading operation from zero — fiat + crypto rails</li>
+          <li>Audited group reporting and legal structure across <span class="num">7 entities</span>, built from scratch</li>
+          <li>Turned one revenue bottleneck into an <span class="num">80-client</span> business-development operation</li>
+          <li>Grew and ran a team of <span class="num">35</span> across 7 companies</li>
+        </ul>
         <div class="row__links">
+          <a class="mono" href="https://notcoin.org/" target="_blank" rel="noopener">Notcoin ↗</a>
+          <a class="mono" href="https://openbuilders.xyz/" target="_blank" rel="noopener">Open Builders ↗</a>
           <a class="mono" href="https://decrypt.co/videos/interviews/nEJVx7Nn/what-is-notcoin-co-creator-sasha-plotvinov-explains-the-viral-telegram-game-and-token" target="_blank" rel="noopener">Decrypt ↗</a>
           <a class="mono" href="https://www.binance.com/en/square/post/23720296410393" target="_blank" rel="noopener">Binance ↗</a>
-          <a class="mono" href="https://openbuilders.xyz/" target="_blank" rel="noopener">Open Builders ↗</a>
         </div>
+        <figure class="row__photo" data-reveal>
+          <img src="img-conference.jpg" alt="Sofia speaking on stage, representing Open Builders" loading="lazy">
+          <figcaption class="mono">On stage for Open Builders</figcaption>
+        </figure>
       </div>
 
       <div class="row" data-reveal>
@@ -351,24 +381,48 @@ a.rowlink:hover .row__name,a.rowlink:focus-visible .row__name{opacity:.6}
     <div class="block" data-section="personal">
       <h2 class="visually-hidden">Personal</h2>
       <div class="block__label" aria-hidden="true">Personal</div>
-      <!-- PLACEHOLDER SECTION — Sofia to provide real content -->
       <div class="p-grid" data-reveal>
         <div class="p-cell">
           <h3>Path</h3>
-          <p>[Placeholder — the story of how a Russian tax lawyer ended up building crypto companies in London.]</p>
+          <p>I've moved countries more than once — for study, for work, for a
+          bet on an industry most people I knew dismissed. I don't sit still:
+          when the interesting thing is somewhere else, I go.</p>
         </div>
         <div class="p-cell">
           <h3>Hobbies</h3>
-          <p>[Placeholder — what Sofia does outside of work.]</p>
+          <p>Ocean first: I surf whenever I can. Yoga is a daily discipline;
+          tennis, hiking and movement in general are non-negotiable. Next on
+          the list: kitesurfing, shooting, riding a motorbike. Off the water —
+          travelling, good food, good books.</p>
         </div>
         <div class="p-cell">
           <h3>What matters</h3>
-          <p>[Placeholder — principles and things Sofia finds important.]</p>
+          <p>Integrity. Loyalty and long-term relationships. Discipline. A
+          challenge worth the effort — and zero patience for the status quo.</p>
         </div>
         <div class="p-cell">
           <h3>Books</h3>
-          <p>[Placeholder — favourite books, possibly with a line on why each one.]</p>
+          <p>Lately addicted to Irvin Yalom — fiction that doubles as a
+          psychology course. And rereading Anna Karenina.</p>
         </div>
+      </div>
+      <div class="p-photos" data-reveal>
+        <figure>
+          <img src="img-surf.jpg" alt="Sofia walking up the beach with a surfboard" loading="lazy">
+          <figcaption class="mono">Ocean first</figcaption>
+        </figure>
+        <figure>
+          <img src="img-volcano.jpg" alt="Sofia standing at the edge of a volcano crater" loading="lazy">
+          <figcaption class="mono">Up a volcano</figcaption>
+        </figure>
+        <figure>
+          <img src="img-books.jpg" alt="A book exchange in a red telephone box" loading="lazy">
+          <figcaption class="mono">Books, anywhere</figcaption>
+        </figure>
+        <!-- Pending JPG re-export from HEIC:
+        <figure><img src="img-hiking.jpg" alt="Hiking" loading="lazy"><figcaption class="mono">Trails</figcaption></figure>
+        <figure><img src="img-turkey.jpg" alt="Working outdoors in Turkey" loading="lazy"><figcaption class="mono">Remote office, Turkey</figcaption></figure>
+        -->
       </div>
     </div>
 
